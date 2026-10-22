@@ -4,6 +4,7 @@
   "description": "Local settings window only: storage, credentials, startup, backups and MCP",
   "windows": ["settings"],
   "permissions": [
+    "core:window:allow-destroy",
     "dialog:allow-open", "autostart:allow-enable", "autostart:allow-disable",
     "autostart:allow-is-enabled", "allow-get-note", "allow-update-note",
     "allow-design-context", "allow-design-note-summaries", "allow-get-note-design", "allow-save-settings", "allow-set-shortcut-recording",

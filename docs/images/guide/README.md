@@ -1,7 +1,8 @@
 # User-guide screenshots
 
 These PNGs show the actual packaged Pinboard v0.1.0 Windows interface, captured
-on 2026-10-22 KST. Korean and English editions each contain six views: a note,
+on 2026-10-22 KST. Korean, English, Simplified Chinese, Japanese, French and Spanish
+editions each contain six views: a note,
 appearance controls, pin modes, calendar, general settings and backup controls.
 
 The application executable matches the official release manifest:

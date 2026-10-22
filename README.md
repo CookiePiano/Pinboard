@@ -27,6 +27,8 @@ Windows 11 x64에서 사용할 수 있습니다.
 
 **[그림으로 보는 사용 가이드 →](docs/user-guide.md)**
 
+가이드 언어: [한국어](docs/user-guide.md) · [English](docs/user-guide.en.md) · [简体中文](docs/user-guide.zh.md) · [日本語](docs/user-guide.ja.md) · [Français](docs/user-guide.fr.md) · [Español](docs/user-guide.es.md)
+
 ## 이렇게 써 보세요
 
 - **바로 적기** — 할 일이나 생각을 메모하고, 원하는 곳으로 옮겨 두세요.

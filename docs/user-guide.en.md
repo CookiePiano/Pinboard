@@ -1,6 +1,8 @@
 # Pinboard user guide
 
-[한국어](user-guide.md) | **English** · [Back to the introduction](../README.en.md)
+[한국어](user-guide.md) | **English** | [简体中文](user-guide.zh.md) | [日本語](user-guide.ja.md) | [Français](user-guide.fr.md) | [Español](user-guide.es.md)
+
+[Back to the introduction](../README.en.md)
 
 Start by writing a note. You can explore colors and settings whenever you need them.
 This guide covers v0.1.0 for Windows 11. All screenshots use made-up example notes.
@@ -110,6 +112,8 @@ Open **gear → General** from a note.
 ![General settings with language, appearance, startup and shortcut choices](images/guide/en/settings.png)
 
 Login startup and global shortcuts are off initially. A shortcut may be unavailable if another app already uses it.
+
+> **Known issue in v0.1.0:** the settings window's X button does not close it. For now, minimize the window or choose **Quit Pinboard** in the notification area and reopen the app. The source fix does not update the existing v0.1.0 installer automatically.
 
 <a id="backup"></a>
 

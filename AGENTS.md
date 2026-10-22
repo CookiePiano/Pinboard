@@ -44,7 +44,9 @@
   import must not silently provision it or edit external AI client configuration.
 - Keep legacy compatibility paths unless the requested change includes migration.
 - Keep the README and user guide in Korean by default, with matching English
-  editions and language links. Write developer documentation in English. Preserve
+  editions. User guides also cover Simplified Chinese, Japanese, French and Spanish;
+  keep all six editions and language links aligned with actual UI labels.
+  Write developer documentation in English. Preserve
   literal paths, identifiers, localized acceptance strings and historical
   verification dates/counts. Public screenshots must use isolated synthetic data;
   never include personal notes, account details or private filesystem paths.

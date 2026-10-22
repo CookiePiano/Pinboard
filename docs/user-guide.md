@@ -1,6 +1,8 @@
 # Pinboard 사용 가이드
 
-**한국어** | [English](user-guide.en.md) · [처음으로](../README.md)
+**한국어** | [English](user-guide.en.md) | [简体中文](user-guide.zh.md) | [日本語](user-guide.ja.md) | [Français](user-guide.fr.md) | [Español](user-guide.es.md)
+
+[처음으로](../README.md)
 
 처음에는 메모에 글을 적는 것만으로 충분합니다. 색상이나 설정은 필요할 때 바꿔 보세요.
 이 가이드는 Windows 11용 v0.1.0을 기준으로 합니다. 모든 화면에는 설명용 예시 메모만 사용했습니다.
@@ -109,6 +111,8 @@ Windows 보안 기능을 끄지 말고, 필요한 경우 [파일 검증 안내 �
 ![언어, 화면 모드, 자동 실행과 단축키를 바꾸는 일반 설정](images/guide/ko/settings.png)
 
 자동 실행과 전역 단축키는 처음에는 꺼져 있습니다. 다른 앱이 이미 사용하는 키 조합은 등록되지 않을 수 있습니다.
+
+> **v0.1.0의 알려진 문제:** 설정 창의 X 버튼이 작동하지 않습니다. 임시로 최소화 버튼을 사용하거나, 알림 영역에서 **Pinboard 종료** 후 다시 실행하세요. 수정 코드는 저장소에 반영되지만 기존 v0.1.0 설치 파일은 자동으로 변경되지 않습니다.
 
 <a id="backup"></a>
 

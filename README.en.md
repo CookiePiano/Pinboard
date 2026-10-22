@@ -27,6 +27,8 @@ Prefer to run it without installing? Get the [portable ZIP](https://github.com/C
 
 **[See the illustrated user guide →](docs/user-guide.en.md)**
 
+Guide languages: [한국어](docs/user-guide.md) · [English](docs/user-guide.en.md) · [简体中文](docs/user-guide.zh.md) · [日本語](docs/user-guide.ja.md) · [Français](docs/user-guide.fr.md) · [Español](docs/user-guide.es.md)
+
 ## Make yourself at home
 
 - **Write it down** — capture a thought or a to-do and move the note where you need it.

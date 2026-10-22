@@ -4,6 +4,10 @@
 
 - [한국어 사용 가이드](user-guide.md)
 - [English user guide](user-guide.en.md)
+- [简体中文使用指南](user-guide.zh.md)
+- [日本語の使い方ガイド](user-guide.ja.md)
+- [Guide d’utilisation en français](user-guide.fr.md)
+- [Guía de uso en español](user-guide.es.md)
 - [Download Pinboard](https://github.com/CookiePiano/Pinboard/releases)
 
 ## For developers
@@ -13,7 +17,7 @@
 3. Locate the feature owner below before editing. Run the matching tests and the required repository checks.
 4. Use a dated receipt only as evidence for its named snapshot. Verify current source and binary hashes independently.
 
-The README and user guide have Korean and English editions, with Korean as the default. Developer documentation is maintained in English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
+The README has Korean and English editions, with Korean as the default. User guides also cover Simplified Chinese, Japanese, French and Spanish, matching the application's six languages. Developer documentation is maintained in English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
 
 ## Current guides
 
@@ -35,6 +39,10 @@ The README and user guide have Korean and English editions, with Korean as the d
 | Redistribution notices | [License guide](../licenses/README.md) | Lockfiles and `scripts/generate-notices.mjs` |
 
 ## Active verification
+
+[Settings close, 2026-10-22](settings-close-2026-10-22.md) records the v0.1.0
+close-permission failure, the settings-only fix and local runtime checks for
+successful saves, write failures and retries. Existing release assets are unchanged.
 
 [Performance and memory, 2026-10-22](performance-2026-10-22.md) records shared
 snapshots, smaller IPC payloads, window/panel loading and background scheduling.
