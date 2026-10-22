@@ -14,14 +14,14 @@
 
 ## 1. インストールして開く
 
-1. [Windows インストーラー](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe) をダウンロードします。**Windows 11 x64** が必要です。
+1. [Windows インストーラー](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe) をダウンロードします。**Windows 11 x64** が必要です。
 2. インストーラーを実行し、画面の案内に従います。
 3. Windows のスタートメニューから **Pinboard** を開き、表示されたメモに入力します。
 
 アカウントや AI への接続は不要です。初期設定では、この PC にメモが保存されます。
 初回の表示言語は韓国語です。メモの歯車をクリックし、**일반 → 언어 (Language Setting) → 日本語** を選んでください。以下の画像は日本語の画面です。
 
-**インストールせずに使う場合：** [ポータブル版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip) をダウンロードして展開し、`Pinboard.exe` を実行します。ZIP の中から直接実行しないでください。
+**インストールせずに使う場合：** [ポータブル版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip) をダウンロードして展開し、`Pinboard.exe` を実行します。ZIP の中から直接実行しないでください。
 ポータブル版も、実行ファイルの隣ではなく PC のアプリデータフォルダーにメモを保存します。別の PC へ移すときは [バックアップとエクスポート](#backup) を使います。
 
 <a id="download-safety"></a>
@@ -29,7 +29,7 @@
 ### Windows に発行元の警告が表示されたら
 
 初回リリースの 0.1.0 は署名されていないため、発行元不明の警告が表示される場合があります。
-[公式リリースページ](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) から入手したファイルであることと、上のリンクとファイル名が一致することを確認してください。
+[公式リリースページ](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) から入手したファイルであることと、上のリンクとファイル名が一致することを確認してください。
 この確認だけで安全性が保証されるわけではありません。入手元が不明なファイルは実行しないでください。
 Windows のセキュリティ保護は有効にしておきます。詳しい確認方法は [ファイル検証ガイド（英語）](download-verification.md) を参照してください。
 
@@ -113,7 +113,7 @@ Windows のセキュリティ保護は有効にしておきます。詳しい確
 
 自動起動とグローバルショートカットは初期状態では無効です。ほかのアプリが使っている組み合わせは設定できない場合があります。
 
-> **v0.1.0 の既知の問題：** 設定ウィンドウの X ボタンでは閉じられません。当面は最小化するか、通知領域から **Pinboard を終了** して開き直してください。ソースコードの修正によって、既存の v0.1.0 インストーラーが自動更新されるわけではありません。
+> **設定ウィンドウが閉じない場合：** 修正版 **v0.1.0-r2** を新しくダウンロードして再インストールしてください。アプリのバージョンは 0.1.0 のままです。以前の v0.1.0 のダウンロードには修正が含まれません。
 
 <a id="backup"></a>
 

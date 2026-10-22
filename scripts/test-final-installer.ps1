@@ -22,6 +22,11 @@ Run-Wizard (Join-Path $Directory "Pinboard_${version}_x64-setup.exe") "/S /NS /D
 $installedHash = (Get-FileHash -LiteralPath (Join-Path $install 'pinboard.exe')).Hash
 $portableHash = (Get-FileHash -LiteralPath (Join-Path $Directory 'Pinboard.exe')).Hash
 if ($installedHash -ne $portableHash) { throw "Installed payload $installedHash differs from portable payload $portableHash" }
+# The corrected distribution intentionally retains the installed product version.
+# Exercise replacement of an existing same-version installation and preserve data.
+Run-Wizard (Join-Path $Directory "Pinboard_${version}_x64-setup.exe") "/S /NS /D=$install"
+if ((Get-FileHash -LiteralPath (Join-Path $install 'pinboard.exe')).Hash -ne $portableHash) { throw 'Same-version reinstall changed the payload' }
+if ([IO.File]::ReadAllText($sentinel) -ne 'preserve') { throw 'Same-version reinstall deleted note data' }
 node (Join-Path $PSScriptRoot 'test-packaged.mjs') (Join-Path $install 'pinboard.exe') (Join-Path $work 'smoke')
 if ($LASTEXITCODE -ne 0) { throw 'Installed app smoke failed' }
 Run-Wizard (Join-Path $Directory 'Pinboard_Uninstall.exe') '/S'
@@ -29,4 +34,4 @@ if ((Test-Path -LiteralPath $registry) -or (Test-Path -LiteralPath (Join-Path $i
 if ([IO.File]::ReadAllText($sentinel) -ne 'preserve') { throw 'Removal deleted note data' }
 Remove-Item -LiteralPath $sentinel
 Remove-Item -LiteralPath $data
-Write-Output 'PASS: exact published installer, installed payload hash, MCP startup and removal/data preservation.'
+Write-Output 'PASS: exact published installer, same-version reinstall, installed payload hash, MCP startup and removal/data preservation.'

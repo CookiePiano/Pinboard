@@ -14,13 +14,13 @@
 
 ## 1. 설치하고 실행하기
 
-1. [Windows용 설치 파일](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)을 받습니다. 지원 환경은 **Windows 11 x64**입니다.
+1. [Windows용 설치 파일](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)을 받습니다. 지원 환경은 **Windows 11 x64**입니다.
 2. 설치 파일을 실행하고 화면 안내에 따라 설치합니다.
 3. Windows 시작 메뉴에서 **Pinboard**를 실행합니다. 열린 메모에 바로 글을 적어 보세요.
 
 회원가입이나 AI 연결은 필요하지 않습니다. 기본 상태에서는 메모가 현재 PC에 저장됩니다.
 
-**설치 없이 사용하려면:** [포터블 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip)을 받은 뒤 압축을 풀고 `Pinboard.exe`를 실행하세요. 압축 파일 안에서 바로 실행하지 마세요.
+**설치 없이 사용하려면:** [포터블 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip)을 받은 뒤 압축을 풀고 `Pinboard.exe`를 실행하세요. 압축 파일 안에서 바로 실행하지 마세요.
 포터블 버전도 메모를 실행 파일 옆이 아닌 PC의 앱 데이터 폴더에 저장합니다. 다른 PC로 옮길 때는 [백업](#backup)을 이용하세요.
 
 <a id="download-safety"></a>
@@ -28,7 +28,7 @@
 ### Windows에 게시자 경고가 나오면
 
 첫 버전 0.1.0에는 코드 서명이 없어 게시자 확인 경고가 나올 수 있습니다.
-파일을 받은 곳이 [공식 릴리스 페이지](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0)인지, 파일명이 위 링크와 같은지 확인하세요.
+파일을 받은 곳이 [공식 릴리스 페이지](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2)인지, 파일명이 위 링크와 같은지 확인하세요.
 이 확인만으로 파일의 안전성이 보장되지는 않습니다. 출처가 불확실하면 실행하지 마세요.
 Windows 보안 기능을 끄지 말고, 필요한 경우 [파일 검증 안내 · English](download-verification.md)를 확인하세요.
 
@@ -112,7 +112,7 @@ Windows 보안 기능을 끄지 말고, 필요한 경우 [파일 검증 안내 �
 
 자동 실행과 전역 단축키는 처음에는 꺼져 있습니다. 다른 앱이 이미 사용하는 키 조합은 등록되지 않을 수 있습니다.
 
-> **v0.1.0의 알려진 문제:** 설정 창의 X 버튼이 작동하지 않습니다. 임시로 최소화 버튼을 사용하거나, 알림 영역에서 **Pinboard 종료** 후 다시 실행하세요. 수정 코드는 저장소에 반영되지만 기존 v0.1.0 설치 파일은 자동으로 변경되지 않습니다.
+> **설정 창이 닫히지 않는다면:** 수정 배포본 **v0.1.0-r2**의 설치 파일을 새로 받아 재설치하세요. 앱 버전은 0.1.0 그대로이며, 기존 v0.1.0 다운로드에는 수정이 포함되지 않습니다.
 
 <a id="backup"></a>
 

@@ -14,14 +14,14 @@
 
 ## 1. 安装并打开 Pinboard
 
-1. 下载 [Windows 安装程序](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)。需要 **Windows 11 x64**。
+1. 下载 [Windows 安装程序](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)。需要 **Windows 11 x64**。
 2. 运行安装程序，按照提示完成安装。
 3. 从 Windows 开始菜单打开 **Pinboard**，在出现的便签中输入文字。
 
 不需要账号，也不需要连接 AI。默认情况下，便签保存在这台电脑上。
 首次启动时界面为韩语。点击便签上的齿轮，再选择 **일반 → 언어 (Language Setting) → 简体中文**。下方截图使用简体中文界面。
 
-**不想安装？** 下载 [便携版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip)，解压后运行 `Pinboard.exe`。不要直接从 ZIP 内运行。
+**不想安装？** 下载 [便携版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip)，解压后运行 `Pinboard.exe`。不要直接从 ZIP 内运行。
 便携版也会将便签保存在本机的应用数据文件夹中，而不是程序旁边。换电脑时，请使用 [备份和导出](#backup)。
 
 <a id="download-safety"></a>
@@ -29,7 +29,7 @@
 ### 如果 Windows 提示发布者未知
 
 首个版本 0.1.0 尚未签名，因此 Windows 可能显示发布者未知的提示。
-请确认文件来自 [官方发布页面](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0)，且文件名与上面的链接一致。
+请确认文件来自 [官方发布页面](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2)，且文件名与上面的链接一致。
 仅凭这些检查不能保证文件安全。如果无法确认来源，请勿运行。
 请保持 Windows 安全防护开启。更多检查方法见 [文件验证指南（英文）](download-verification.md)。
 
@@ -113,7 +113,7 @@
 
 自动启动和全局快捷键默认关闭。如果其他应用已占用某个快捷键，该组合可能无法使用。
 
-> **v0.1.0 已知问题：** 设置窗口的 X 按钮无法关闭窗口。可暂时使用最小化按钮，或在通知区域选择 **退出 Pinboard** 后重新启动。源码中的修复不会自动更新现有的 v0.1.0 安装程序。
+> **如果设置窗口无法关闭：** 请重新下载并安装修正版 **v0.1.0-r2**。应用版本仍为 0.1.0，原来的 v0.1.0 下载文件不包含此修复。
 
 <a id="backup"></a>
 

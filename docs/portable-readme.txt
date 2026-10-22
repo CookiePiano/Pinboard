@@ -1,4 +1,5 @@
 Pinboard 0.1.0 - Windows 11 x64
+Corrected distribution: v0.1.0-r2 (settings X close fix).
 
 Official source and downloads: https://github.com/CookiePiano/Pinboard
 Extract this ZIP into a folder you can write to, then run Pinboard.exe.

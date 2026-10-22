@@ -81,7 +81,12 @@ if (action === "write") {
   const commit = command("git", ["rev-parse", "HEAD"]);
   const tag = process.env.PINBOARD_RELEASE_TAG || command("git", ["describe", "--tags", "--exact-match", "HEAD"]);
   const dirty = command("git", ["status", "--porcelain", "--untracked-files=normal"]) !== "";
-  if (process.env.PINBOARD_RELEASE_TAG && (tag !== `v${releaseVersion}` || !commit || dirty)) throw new Error("Official releases require a clean tagged commit");
+  if (process.env.PINBOARD_RELEASE_TAG) {
+    const allowed = tag === `v${releaseVersion}` || (releaseVersion === "0.1.0" && tag === "v0.1.0-r2");
+    if (!allowed || !commit || dirty || command("git", ["rev-parse", `refs/tags/${tag}^{commit}`]) !== commit) {
+      throw new Error("Official releases require a clean commit matching an approved release tag");
+    }
+  }
   const receipt = { format: "Pinboard release", schemaVersion: 2, version: releaseVersion,
     createdAt: new Date().toISOString(), buildId: `${releaseVersion}-${sourceSha256.slice(0, 16)}`,
     publisherAuthentication: "Not provided by SHA-256; verify publisher signatures separately.",

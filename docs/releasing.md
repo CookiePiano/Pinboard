@@ -4,7 +4,12 @@
 
 The first public release is 0.1.0 for Windows 11 x64, under MIT. Local historical
 0.1.1 builds were development artifacts. Do not force an existing higher-version
-installation to downgrade. Preserve user data and historical artifacts.
+installation to downgrade. Preserve user data and historical verification records.
+The corrected distribution uses tag **v0.1.0-r2** while retaining application,
+installer and package version **0.1.0**, as requested by the maintainer. This is a
+separate release, not a replacement of immutable v0.1.0 assets. The existing
+unsigned 0.1.0 exception covers this correction; later application versions still
+require signing. Mark r2 as the latest release after verification.
 
 The maintainer verifies all public files, licenses, secrets scanning and tests
 before the first source push. Protect main with required PRs, security-windows and
@@ -42,15 +47,19 @@ crate is exempt. New notices require review. Keep the GLib vendor integrity guar
 ## Official publication
 
 1. Commit the tested source and lockfiles. Wait for security-windows on that commit.
-2. Create v0.1.0 at that exact main commit. Do not move an existing tag.
-3. CookiePiano dispatches Release Windows from main for v0.1.0. PRs and forks
+2. Create v0.1.0-r2 at that exact main commit. Do not move an existing tag.
+3. CookiePiano dispatches Release Windows from main for v0.1.0-r2. PRs and forks
    cannot publish. The workflow checks the tag, ancestor and successful check.
 4. The GitHub-hosted Windows job rebuilds the release and installs the exact final
-   setup in a disposable environment. Attestation runs with narrowly scoped
+   setup, including same-version reinstallation and data preservation, in a
+   disposable environment. Attestation runs with narrowly scoped
    permissions; publication permissions exist only in the final draft job.
 5. Download the draft's exact files, verify hashes, manifests and build attestations.
-   Publish the completed draft only after all checks pass. Immutable releases lock
-   assets and the tag; changes require a new version.
+   Run the exact downloaded app with isolated synthetic data and a separate
+   WebView2 profile. Verify settings X closes, can reopen, and preserves pending
+   edits; save errors must keep settings open. Publish the completed draft only
+   after all checks pass. Immutable releases lock assets and the tag; changes
+   require a new release tag. Never silently replace a published download.
 6. Download the public assets again and verify the release attestation and build
    attestation against CookiePiano/Pinboard and the release workflow.
 

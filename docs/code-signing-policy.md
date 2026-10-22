@@ -8,6 +8,10 @@ Official downloads are exclusively linked from
 https://github.com/CookiePiano/Pinboard/releases . GitHub build and release
 attestations provide independently verifiable repository provenance.
 
+The maintainer-requested `v0.1.0-r2` correction retains application version 0.1.0
+and the same unsigned exception. It is a separate immutable distribution with its
+own tag, hashes and attestations. The exception does not cover later app versions.
+
 ## Responsible people
 
 - Author/committer: [CookiePiano](https://github.com/CookiePiano)

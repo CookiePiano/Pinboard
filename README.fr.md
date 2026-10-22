@@ -11,13 +11,13 @@ Pinboard est gratuit. Aucun compte ni connexion à une IA n’est nécessaire po
 
 ## Télécharger
 
-**[Télécharger pour Windows · v0.1.0](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)**
+**[Télécharger pour Windows · v0.1.0-r2](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)**
 
 Pour Windows 11 x64.
-Vous préférez éviter l’installation ? Téléchargez le [ZIP portable](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip).
+Vous préférez éviter l’installation ? Téléchargez le [ZIP portable](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip).
 
 > Cette première version n’est pas signée. Windows peut afficher un avertissement indiquant un éditeur inconnu.
-> Consultez la [version officielle](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) et les [conseils de téléchargement](docs/user-guide.fr.md#download-safety). Gardez les protections de Windows activées.
+> Consultez la [version officielle](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) et les [conseils de téléchargement](docs/user-guide.fr.md#download-safety). Gardez les protections de Windows activées.
 
 ## Démarrer en trois étapes
 

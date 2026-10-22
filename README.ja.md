@@ -11,13 +11,13 @@
 
 ## ダウンロード
 
-**[Windows 版をダウンロード · v0.1.0](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)**
+**[Windows 版をダウンロード · v0.1.0-r2](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)**
 
 Windows 11 x64 に対応しています。
-インストールせずに使う場合は [ポータブル版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip) をダウンロードしてください。
+インストールせずに使う場合は [ポータブル版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip) をダウンロードしてください。
 
 > 初回リリースは署名されていないため、Windows に発行元不明の警告が表示される場合があります。
-> [公式リリース](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) と [ダウンロード時の確認事項](docs/user-guide.ja.md#download-safety) を確認し、Windows のセキュリティ保護は有効にしておいてください。
+> [公式リリース](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) と [ダウンロード時の確認事項](docs/user-guide.ja.md#download-safety) を確認し、Windows のセキュリティ保護は有効にしておいてください。
 
 ## 3 ステップで始める
 
