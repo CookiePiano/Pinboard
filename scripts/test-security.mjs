@@ -25,13 +25,17 @@ const sensitive = ["save-settings", "gdrive-connect", "gdrive-disconnect", "open
   "export-archive", "import-archive", "provision-mcp", "set-mcp-enabled", "connect-mcp-clients"];
 for (const cap of caps) {
   if (ids(cap).some((id) => sensitive.some((name) => id === `allow-${name}`)
-    || id.startsWith("autostart:") || id === "dialog:allow-open")) {
+    || id.startsWith("autostart:") || id === "dialog:allow-open" || id === "core:window:allow-destroy")) {
     assert.deepEqual(cap.windows, ["settings"], `${cap.identifier} grants a sensitive action outside settings`);
   }
   assert.ok(!ids(cap).includes("opener:default"));
   assert.ok(!ids(cap).includes("opener:allow-open-path"));
 }
 const granted = new Set(caps.flatMap(ids));
+// Tauri onCloseRequested completes an accepted close with destroy(), after our
+// settings handler flushes pending design saves. allow-close alone is not enough.
+assert.ok(caps.some((cap) => cap.windows.includes("settings")
+  && ids(cap).includes("core:window:allow-destroy")), "Settings must be able to finish a saved close request");
 for (const command of registered) assert.ok(granted.has(`allow-${command.replaceAll("_", "-")}`), `${command} has no UI grant`);
 const opener = caps.flatMap((cap) => cap.permissions).find((p) => p.identifier === "opener:allow-open-url");
 assert.deepEqual(opener.allow, [{ url: "https://*" }, { url: "http://*" }]);
