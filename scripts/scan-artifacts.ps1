@@ -12,19 +12,25 @@ $scanner = Get-ChildItem -LiteralPath $platform -Filter MpCmdRun.exe -Recurse -E
 if (!$scanner) { $scanner = Join-Path $env:ProgramFiles 'Windows Defender\MpCmdRun.exe' }
 if (!(Test-Path -LiteralPath $scanner)) { throw 'Windows Defender scanner is unavailable' }
 & $scanner -SignatureUpdate *> (Join-Path $EvidenceDirectory 'definitions.log')
-if ($LASTEXITCODE -ne 0) { throw 'Defender signature update failed' }
+if ($LASTEXITCODE -ne 0) {
+    Get-Content -LiteralPath (Join-Path $EvidenceDirectory 'definitions.log')
+    throw 'Defender signature update failed'
+}
 $status = Get-CimInstance -Namespace root/Microsoft/Windows/Defender -ClassName MSFT_MpComputerStatus
 if ((Get-Date) - $status.AntivirusSignatureLastUpdated -gt [TimeSpan]::FromDays(2)) { throw 'Defender definitions are stale' }
 $status | Select-Object AntivirusEnabled, AntivirusSignatureVersion, AntivirusSignatureLastUpdated | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $EvidenceDirectory 'engine.json') -Encoding utf8
-# Hosted runners are elevated, so additionally verify their exclusion cleanup.
-# On a normal developer account CheckExclusion requires elevation; the custom
-# DisableRemediation scan itself ignores file exclusions and inspects archives
-# (documented by MpCmdRun -?), without changing the user's Defender settings.
+# Verify the hosted image's blanket exclusions were actually removed. The custom
+# DisableRemediation scan also ignores file exclusions and inspects archives
+# (documented by MpCmdRun -?), without changing developer PC settings.
 if ($env:GITHUB_ACTIONS -eq 'true' -and $env:RUNNER_ENVIRONMENT -eq 'github-hosted') {
-    & $scanner -CheckExclusion -Path $root *> (Join-Path $EvidenceDirectory 'exclusion-check.log')
-    if ($LASTEXITCODE -ne 1) { throw 'Scan directory is excluded or its exclusion state could not be verified' }
+    if ($preferences.ExclusionPath -or $preferences.ExclusionProcess -or $preferences.ExclusionExtension) {
+        throw 'Hosted scanner exclusions remain enabled'
+    }
 }
 # Preserve evidence and never quarantine another application's files.
 & $scanner -Scan -ScanType 3 -File $root -DisableRemediation *> (Join-Path $EvidenceDirectory 'scan.log')
-if ($LASTEXITCODE -ne 0) { throw 'Defender detected a threat or could not complete the scan; see private evidence' }
+if ($LASTEXITCODE -ne 0) {
+    Get-Content -LiteralPath (Join-Path $EvidenceDirectory 'scan.log')
+    throw 'Defender detected a threat or could not complete the scan'
+}
 Write-Output 'Defender custom scan completed without detections (no-remediation mode).'
