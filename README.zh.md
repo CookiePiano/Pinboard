@@ -11,13 +11,13 @@ Pinboard 可以免费使用，基本记事功能不需要注册账号或连接 A
 
 ## 下载
 
-**[下载 Windows 版 · v0.1.0](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)**
+**[下载 Windows 版 · v0.1.0-r2](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)**
 
 适用于 Windows 11 x64。
-如果不想安装，可以下载 [便携版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip)。
+如果不想安装，可以下载 [便携版 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip)。
 
 > 首个版本尚未签名，Windows 可能显示发布者未知的提示。
-> 请查看 [官方发布页面](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) 和 [下载说明](docs/user-guide.zh.md#download-safety)。请保持 Windows 安全防护开启。
+> 请查看 [官方发布页面](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) 和 [下载说明](docs/user-guide.zh.md#download-safety)。请保持 Windows 安全防护开启。
 
 ## 三步开始使用
 

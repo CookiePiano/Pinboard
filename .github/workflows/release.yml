@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Reviewed tag for the initial unsigned release
+        description: Reviewed corrected build of application version 0.1.0
         required: true
         type: choice
         options:
-          - v0.1.0
+          - v0.1.0-r2
 
 permissions:
   contents: read
@@ -39,7 +39,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ inputs.tag }}
         run: |
-          if ($env:RELEASE_TAG -cne 'v0.1.0') { throw 'Unexpected release tag' }
+          if ($env:RELEASE_TAG -cne 'v0.1.0-r2') { throw 'Unexpected release tag' }
           $sha = git rev-parse HEAD
           if ($LASTEXITCODE -ne 0 -or $sha -notmatch '^[0-9a-f]{40}$') { throw 'Invalid commit' }
           if ($sha -cne $env:GITHUB_SHA) { throw 'Dispatch main must identify the exact tagged commit' }
@@ -65,7 +65,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           cargo fetch --manifest-path src-tauri/Cargo.toml --locked
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-      - name: Build and validate the initial unsigned release
+      - name: Build and validate the unsigned 0.1.0 correction
         shell: pwsh
         env:
           PINBOARD_RELEASE_TAG: ${{ inputs.tag }}
@@ -122,8 +122,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: >-
-          gh release create v0.1.0 --repo CookiePiano/Pinboard --verify-tag --draft
-          --title "Pinboard 0.1.0" --notes-file docs/release-notes-0.1.0.md
+          gh release create v0.1.0-r2 --repo CookiePiano/Pinboard --verify-tag --draft
+          --title "Pinboard 0.1.0 (r2) — 설정 닫기 수정" --notes-file docs/release-notes-0.1.0-r2.md
           artifacts/Pinboard_0.1.0_x64-setup.exe
           artifacts/Pinboard_0.1.0_windows-x64-portable.zip
           artifacts/release-manifest.json artifacts/SHA256SUMS.txt artifacts/sbom.spdx.json

@@ -52,7 +52,10 @@ The immutable v0.1.0 installer and ZIP are unchanged and still have the issue.
 As a temporary workaround, minimize settings, or use the notification-area
 **Quit Pinboard** command and reopen the app.
 
-Shipping the fix requires a new version. Follow the existing
-[release process](releasing.md) and [signing policy](code-signing-policy.md);
-the unsigned exception is currently restricted to the initial v0.1.0 release.
-Do not overwrite its assets or silently widen that exception.
+The correction is distributed separately as
+[v0.1.0-r2](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2), retaining
+application version 0.1.0 at the maintainer's request. Download its setup again;
+the original v0.1.0 file cannot update itself. Follow the
+[release process](releasing.md) and [signing policy](code-signing-policy.md).
+The checks above describe the earlier local validation build; r2's own manifest,
+workflow and release notes identify the final distribution and its validation.

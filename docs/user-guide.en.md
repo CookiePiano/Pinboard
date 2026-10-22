@@ -14,14 +14,14 @@ If text in a screenshot looks small, click the image to view it at full size.
 
 ## 1. Install and open Pinboard
 
-1. Get the [Windows installer](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe). You need **Windows 11 x64**.
+1. Get the [Windows installer](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe). You need **Windows 11 x64**.
 2. Run the installer and follow its instructions.
 3. Open **Pinboard** from the Windows Start menu and type in the note that appears.
 
 No account or AI connection is required. Notes stay on this PC by default.
 The app starts in Korean. To switch, click the gear on a note, then **일반 (General) → 언어 (Language Setting) → English**. The screenshots below show the English interface.
 
-**To use it without installing:** download the [portable ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip), extract it, then run `Pinboard.exe`. Do not run it from inside the ZIP.
+**To use it without installing:** download the [portable ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip), extract it, then run `Pinboard.exe`. Do not run it from inside the ZIP.
 The portable edition also stores notes in this PC's app data folder, not next to the executable. Use [backup and export](#backup) to take notes to another PC.
 
 <a id="download-safety"></a>
@@ -29,7 +29,7 @@ The portable edition also stores notes in this PC's app data folder, not next to
 ### If Windows shows a publisher warning
 
 The first release, 0.1.0, is unsigned, so Windows may show an unknown-publisher warning.
-Check that the file came from the [official release page](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) and matches the filename linked above.
+Check that the file came from the [official release page](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) and matches the filename linked above.
 These checks alone do not guarantee safety. Do not run a file if you are unsure of its source.
 Keep Windows security protections on. See the [file verification guide](download-verification.md) for further checks.
 
@@ -113,7 +113,7 @@ Open **gear → General** from a note.
 
 Login startup and global shortcuts are off initially. A shortcut may be unavailable if another app already uses it.
 
-> **Known issue in v0.1.0:** the settings window's X button does not close it. For now, minimize the window or choose **Quit Pinboard** in the notification area and reopen the app. The source fix does not update the existing v0.1.0 installer automatically.
+> **If settings will not close:** download and reinstall the corrected **v0.1.0-r2** setup. The app version remains 0.1.0. The original v0.1.0 download does not include the fix.
 
 <a id="backup"></a>
 

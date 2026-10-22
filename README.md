@@ -11,13 +11,13 @@
 
 ## 다운로드
 
-**[Windows용 다운로드 · v0.1.0](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe)**
+**[Windows용 다운로드 · v0.1.0-r2](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe)**
 
 Windows 11 x64에서 사용할 수 있습니다.
-설치 없이 쓰려면 [포터블 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip)을 받으세요.
+설치 없이 쓰려면 [포터블 ZIP](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip)을 받으세요.
 
 > 첫 버전은 코드 서명이 없어 Windows에서 게시자 확인 경고가 나올 수 있습니다.
-> [공식 릴리스](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0)와 [다운로드 확인 방법](docs/user-guide.md#download-safety)을 확인하세요. Windows 보안 기능은 끄지 마세요.
+> [공식 릴리스](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2)와 [다운로드 확인 방법](docs/user-guide.md#download-safety)을 확인하세요. Windows 보안 기능은 끄지 마세요.
 
 ## 세 단계로 시작하기
 

@@ -14,14 +14,14 @@ Cliquez sur une image pour l’afficher en taille réelle si le texte est trop p
 
 ## 1. Installer et ouvrir Pinboard
 
-1. Téléchargez le [programme d’installation Windows](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_x64-setup.exe). Il faut **Windows 11 x64**.
+1. Téléchargez le [programme d’installation Windows](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_x64-setup.exe). Il faut **Windows 11 x64**.
 2. Lancez le programme et suivez les instructions.
 3. Ouvrez **Pinboard** depuis le menu Démarrer et écrivez dans la note qui apparaît.
 
 Aucun compte ni connexion à une IA n’est nécessaire. Par défaut, les notes restent sur ce PC.
 L’application démarre en coréen. Pour passer en français, cliquez sur la roue dentée d’une note, puis choisissez **일반 → 언어 (Language Setting) → Français**. Les captures ci-dessous montrent l’interface française.
 
-**Sans installation :** téléchargez le [ZIP portable](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0/Pinboard_0.1.0_windows-x64-portable.zip), décompressez-le, puis lancez `Pinboard.exe`. Ne le lancez pas directement depuis le ZIP.
+**Sans installation :** téléchargez le [ZIP portable](https://github.com/CookiePiano/Pinboard/releases/download/v0.1.0-r2/Pinboard_0.1.0_windows-x64-portable.zip), décompressez-le, puis lancez `Pinboard.exe`. Ne le lancez pas directement depuis le ZIP.
 La version portable conserve aussi les notes dans le dossier de données de l’application sur ce PC, et non à côté de l’exécutable. Pour changer de PC, utilisez la [sauvegarde et l’exportation](#backup).
 
 <a id="download-safety"></a>
@@ -29,7 +29,7 @@ La version portable conserve aussi les notes dans le dossier de données de l’
 ### Si Windows affiche un avertissement sur l’éditeur
 
 La première version, 0.1.0, n’est pas signée. Windows peut donc indiquer que l’éditeur est inconnu.
-Vérifiez que le fichier provient de la [page officielle de la version](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0) et que son nom correspond au lien ci-dessus.
+Vérifiez que le fichier provient de la [page officielle de la version](https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2) et que son nom correspond au lien ci-dessus.
 Ces vérifications seules ne garantissent pas sa sécurité. Ne lancez pas un fichier dont vous ne connaissez pas la provenance.
 Gardez les protections de Windows activées. Le [guide de vérification des fichiers, en anglais](download-verification.md), explique les autres contrôles possibles.
 
@@ -113,7 +113,7 @@ Ouvrez **roue dentée → Général** depuis une note.
 
 Le démarrage automatique et les raccourcis globaux sont désactivés au départ. Une combinaison déjà utilisée par une autre application peut être indisponible.
 
-> **Problème connu de la v0.1.0 :** le bouton X des paramètres ne ferme pas la fenêtre. En attendant, réduisez-la ou choisissez **Quitter Pinboard** dans la zone de notification, puis rouvrez l’application. La correction du code source ne met pas automatiquement à jour l’installateur v0.1.0 existant.
+> **Si les paramètres ne se ferment pas :** téléchargez et réinstallez la version corrigée **v0.1.0-r2**. L’application reste en version 0.1.0. Le téléchargement v0.1.0 d’origine ne contient pas la correction.
 
 <a id="backup"></a>
 

@@ -11,12 +11,12 @@ With the official GitHub CLI installed, check both the published release and
 the build provenance. Replace the filename with the actual downloaded asset:
 
 ```powershell
-gh release verify-asset v0.1.0 .\Pinboard_0.1.0_x64-setup.exe --repo CookiePiano/Pinboard
+gh release verify-asset v0.1.0-r2 .\Pinboard_0.1.0_x64-setup.exe --repo CookiePiano/Pinboard
 gh attestation verify .\Pinboard_0.1.0_x64-setup.exe --repo CookiePiano/Pinboard --signer-workflow CookiePiano/Pinboard/.github/workflows/release.yml
 Get-FileHash .\Pinboard_0.1.0_x64-setup.exe -Algorithm SHA256
 ```
 
-The manifest must identify the v0.1.0 tag and its exact source commit. Check the
+The manifest must identify the v0.1.0-r2 tag and its exact source commit. Check the
 workflow run linked by that manifest and the successful security/build jobs.
 For a full local receipt check, download all five assets, extract the portable ZIP
 into that same directory, and use `scripts/release-manifest.mjs verify <directory>`
