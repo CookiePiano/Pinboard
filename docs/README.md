@@ -1,20 +1,26 @@
 # Documentation index
 
-## Start here
+## For users
+
+- [한국어 사용 가이드](user-guide.md)
+- [English user guide](user-guide.en.md)
+- [Download Pinboard](https://github.com/CookiePiano/Pinboard/releases)
+
+## For developers
 
 1. Read [the agent guide](../AGENTS.md) for workspace safeguards and required checks.
-2. Read [the application contract](../README.md) for supported behavior and data invariants.
+2. Read [the technical reference](technical-reference.md) for supported behavior and data invariants.
 3. Locate the feature owner below before editing. Run the matching tests and the required repository checks.
 4. Use a dated receipt only as evidence for its named snapshot. Verify current source and binary hashes independently.
 
-Maintained prose is English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
+The README and user guide have Korean and English editions, with Korean as the default. Developer documentation is maintained in English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
 
 ## Current guides
 
 | Need | Guide | Main source owner |
 | --- | --- | --- |
-| Behavior, storage and development | [Application README](../README.md) | `src-tauri/src/lib.rs`, `model.rs`, `store.rs` |
-| Editing, formatting and save ordering | [Application behavior](../README.md#behavior-and-invariants) | `src/lib/note/`, especially `editor.ts`, `formatting.ts`, `save-queue.ts` |
+| Behavior, storage and development | [Technical reference](technical-reference.md) | `src-tauri/src/lib.rs`, `model.rs`, `store.rs` |
+| Editing, formatting and save ordering | [Application behavior](technical-reference.md#behavior-and-invariants) | `src/lib/note/`, especially `editor.ts`, `formatting.ts`, `save-queue.ts` |
 | Cloud folder synchronization | [Cloud folder setup](google-drive-setup.md) | `src-tauri/src/sync/` |
 | AI connection and tool contract | [AI collaboration](ai-collaboration.md) | `src-tauri/src/mcp/`, `src/lib/settings/AiPanel.svelte` |
 | Fonts | [Font settings](font-settings.md) | `src-tauri/src/fonts.rs`, `src/lib/fonts.ts` |
