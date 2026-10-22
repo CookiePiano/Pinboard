@@ -2,6 +2,8 @@
 
 [한국어](user-guide.md) | [English](user-guide.en.md) | **简体中文** | [日本語](user-guide.ja.md) | [Français](user-guide.fr.md) | [Español](user-guide.es.md)
 
+[返回简介](../README.zh.md)
+
 先写下一条便签，需要时再调整颜色和设置。
 本指南适用于 Windows 11 上的 v0.1.0。截图中的便签都是虚构示例。
 如果截图中的文字太小，可以点击图片查看原图。
@@ -150,4 +152,4 @@
 上传截图前，请确认没有私人便签、姓名、邮箱、账号信息或文件夹路径。
 安全问题请按照 [安全政策（英文）](../SECURITY.md) 中的说明私下报告。
 
-[返回简介（韩语）](../README.md) · [Introduction in English](../README.en.md)
+[返回简介](../README.zh.md)

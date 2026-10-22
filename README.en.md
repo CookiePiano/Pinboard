@@ -1,6 +1,6 @@
 # Pinboard
 
-[한국어](README.md) | **English**
+[한국어](README.md) | **English** | [简体中文](README.zh.md) | [日本語](README.ja.md) | [Français](README.fr.md) | [Español](README.es.md)
 
 **Sticky notes for your desktop. A place for the things you want to remember.**
 
