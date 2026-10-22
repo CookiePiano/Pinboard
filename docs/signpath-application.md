@@ -6,7 +6,7 @@ certificate is claimed. Submit only after the initial public binary release.
 - Project: Pinboard, desktop sticky notes for Windows 11 x64.
 - Source: https://github.com/CookiePiano/Pinboard
 - License: MIT, with preserved third-party notices and source dependency SBOM.
-- Initial release: https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0
+- Initial release: https://github.com/CookiePiano/Pinboard/releases/tag/v0.1.0-r2
 - Owner, author, reviewer and proposed signing approver: CookiePiano.
 - Maintainer MFA: confirmed by the maintainer on 2026-10-22 KST.
 - Signing policy: docs/code-signing-policy.md; privacy policy: docs/privacy.md.
@@ -25,4 +25,4 @@ restricted CI token, artifact metadata constraints and manual signing approval.
 Review NSIS's embedded EXE/uninstaller signing sequence before enabling signing;
 signing only the outer installer is insufficient. Test the actual installed files.
 Publish the required provider attribution only when service is actually granted.
-Use a new release version for signed artifacts, preserving immutable 0.1.0.
+Use a new release version for signed artifacts, preserving immutable v0.1.0-r2.
