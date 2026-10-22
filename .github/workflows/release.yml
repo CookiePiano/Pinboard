@@ -1,0 +1,127 @@
+name: Release Windows
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Reviewed tag for the initial unsigned release
+        required: true
+        type: choice
+        options:
+          - v0.1.0
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pinboard-release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'CookiePiano/Pinboard' && github.actor == 'CookiePiano' && github.ref == 'refs/heads/main'
+    runs-on: windows-2022
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      checks: read
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify tag and required security check
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          if ($env:RELEASE_TAG -cne 'v0.1.0') { throw 'Unexpected release tag' }
+          $sha = git rev-parse HEAD
+          if ($LASTEXITCODE -ne 0 -or $sha -notmatch '^[0-9a-f]{40}$') { throw 'Invalid commit' }
+          if ($sha -cne $env:GITHUB_SHA) { throw 'Dispatch main must identify the exact tagged commit' }
+          git merge-base --is-ancestor $sha origin/main
+          if ($LASTEXITCODE -ne 0) { throw 'Release commit is not on main' }
+          $checks = gh api "repos/CookiePiano/Pinboard/commits/$sha/check-runs"
+          if ($LASTEXITCODE -ne 0) { throw 'Cannot verify required checks' }
+          $passed = ($checks | ConvertFrom-Json).check_runs | Where-Object { $_.name -eq 'security-windows' -and $_.conclusion -eq 'success' -and $_.app.slug -eq 'github-actions' }
+          if (!$passed) { throw 'The release commit has not passed security-windows' }
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24.13.1'
+      - name: Install locked build dependencies
+        shell: pwsh
+        run: |
+          rustup toolchain install 1.99.1 --profile minimal
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          rustup default 1.99.1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cargo install cargo-audit --version 0.22.2 --locked
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          npm ci --ignore-scripts
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cargo fetch --manifest-path src-tauri/Cargo.toml --locked
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build and validate the initial unsigned release
+        shell: pwsh
+        env:
+          PINBOARD_RELEASE_TAG: ${{ inputs.tag }}
+        run: ./scripts/release.ps1 -OutputDirectory "$env:RUNNER_TEMP/publish" -TargetDirectory "$env:RUNNER_TEMP/pinboard-target" -SigningPolicy UnsignedInitial
+      - name: Test the exact final installer on this disposable runner
+        shell: pwsh
+        run: ./scripts/test-final-installer.ps1 -Directory "$env:RUNNER_TEMP/publish" -WorkDirectory "$env:RUNNER_TEMP/final-install-test"
+      - name: Upload exact validated artifacts
+        id: upload
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-artifacts
+          path: ${{ runner.temp }}/publish/*
+          if-no-files-found: error
+          retention-days: 30
+
+  attest:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+          path: artifacts
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3
+        with:
+          subject-path: artifacts/*
+
+  draft:
+    needs: [build, attest]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ inputs.tag }}
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          artifact-ids: ${{ needs.build.outputs.artifact-id }}
+          merge-multiple: true
+          path: artifacts
+      - name: Create a draft with every public asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create v0.1.0 --repo CookiePiano/Pinboard --verify-tag --draft
+          --title "Pinboard 0.1.0" --notes-file docs/release-notes-0.1.0.md
+          artifacts/Pinboard_0.1.0_x64-setup.exe
+          artifacts/Pinboard_0.1.0_windows-x64-portable.zip
+          artifacts/release-manifest.json artifacts/SHA256SUMS.txt artifacts/sbom.spdx.json

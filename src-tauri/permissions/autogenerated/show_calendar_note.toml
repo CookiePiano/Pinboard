@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-show-calendar-note"
+description = "Enables the show_calendar_note command without any pre-configured scope."
+commands.allow = ["show_calendar_note"]
+
+[[permission]]
+identifier = "deny-show-calendar-note"
+description = "Denies the show_calendar_note command without any pre-configured scope."
+commands.deny = ["show_calendar_note"]

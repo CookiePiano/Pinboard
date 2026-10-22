@@ -1,0 +1,24 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Shared local UI permissions; sensitive operations have separate grants",
+  "windows": ["note-*", "settings", "calendar"],
+  "permissions": [
+    "core:event:default",
+    "core:window:default",
+    "core:window:allow-show",
+    "core:window:allow-hide",
+    "core:window:allow-close",
+    "core:window:allow-set-focus",
+    "core:window:allow-start-dragging",
+    "core:window:allow-start-resize-dragging",
+    "core:window:allow-minimize",
+    "allow-window-ready",
+    "allow-get-settings",
+    "allow-open-settings",
+    "allow-open-calendar",
+    "allow-create-note",
+    "allow-get-sync-status",
+    "allow-list-fonts"
+  ]
+}

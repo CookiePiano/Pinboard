@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-gdrive-connect"
+description = "Enables the gdrive_connect command without any pre-configured scope."
+commands.allow = ["gdrive_connect"]
+
+[[permission]]
+identifier = "deny-gdrive-connect"
+description = "Denies the gdrive_connect command without any pre-configured scope."
+commands.deny = ["gdrive_connect"]

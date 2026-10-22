@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "settings",
+  "description": "Local settings window only: storage, credentials, startup, backups and MCP",
+  "windows": ["settings"],
+  "permissions": [
+    "dialog:allow-open", "autostart:allow-enable", "autostart:allow-disable",
+    "autostart:allow-is-enabled", "allow-get-note", "allow-update-note",
+    "allow-design-context", "allow-design-note-summaries", "allow-get-note-design", "allow-save-settings", "allow-set-shortcut-recording",
+    "allow-sync-now", "allow-has-gdrive-secret", "allow-gdrive-connect",
+    "allow-gdrive-disconnect", "allow-suggest-folder", "allow-app-info",
+    "allow-open-data-dir", "allow-export-archive", "allow-import-archive",
+    "allow-get-transfer-preferences", "allow-save-transfer-preferences",
+    "allow-editor-ready", "allow-fit-settings", "allow-get-mcp-settings", "allow-provision-mcp", "allow-set-mcp-enabled",
+    "allow-mcp-client-status", "allow-connect-mcp-clients"
+  ]
+}

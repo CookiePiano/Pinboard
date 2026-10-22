@@ -1,0 +1,22 @@
+import assert from "node:assert/strict";
+import { findLinks, linkTarget, trimUrl } from "../src/lib/note/links.ts";
+
+const hrefs = (text) => findLinks(text).map(({ href }) => href);
+assert.deepEqual(hrefs("회의록 https://example.com/a?b=1#c 확인"), ["https://example.com/a?b=1#c"]);
+assert.deepEqual(hrefs("http://example.com and www.example.org/path"), ["http://example.com", "https://www.example.org/path"]);
+assert.deepEqual(hrefs("https://example.com에서 보기"), ["https://example.com"]);
+assert.deepEqual(hrefs("(see https://example.com/x)."), ["https://example.com/x"]);
+assert.deepEqual(hrefs("https://en.wikipedia.org/wiki/Pin_(disambiguation)"), ["https://en.wikipedia.org/wiki/Pin_(disambiguation)"]);
+assert.deepEqual(hrefs("[문서](https://example.com/doc)"), ["https://example.com/doc"]);
+assert.deepEqual(hrefs("http://localhost:1420/"), ["http://localhost:1420/"]);
+assert.deepEqual(hrefs("https:// www. awww.example.com ftp://example.com javascript:alert(1)"), []);
+assert.equal(trimUrl("https://example.com/path!?"), "https://example.com/path");
+assert.equal(linkTarget("https://nodot"), null);
+assert.equal(trimUrl("https://example.com/(a[b])"), "https://example.com/(a[b])");
+assert.equal(trimUrl("https://example.com/(a[b])]))!?"), "https://example.com/(a[b])");
+assert.equal(trimUrl("https://example.com/" + ")]!?".repeat(25000)), "https://example.com/");
+assert.equal(trimUrl("https://example.com/(unfinished"), "https://example.com/(unfinished");
+assert.equal(trimUrl(""), "");
+const [link] = findLinks("메모 😀 https://example.com.");
+assert.deepEqual(link, { from: 6, to: 25, href: "https://example.com" });
+console.log("Link checks passed: http/https/www, Korean boundaries, punctuation, brackets, Markdown links, rejects and offsets.");

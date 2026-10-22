@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-provision-mcp"
+description = "Enables the provision_mcp command without any pre-configured scope."
+commands.allow = ["provision_mcp"]
+
+[[permission]]
+identifier = "deny-provision-mcp"
+description = "Denies the provision_mcp command without any pre-configured scope."
+commands.deny = ["provision_mcp"]

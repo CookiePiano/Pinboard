@@ -1,0 +1,164 @@
+/* Form layout for the settings window. Groups are separated by space, rows by a hairline. */
+
+.group {
+  max-width: 560px;
+  margin: 0 0 30px;
+}
+
+.group > h2 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-soft);
+}
+
+.lede {
+  max-width: 520px;
+  margin: 0 0 22px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 52px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.row.stack {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.row-text {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.45;
+}
+
+.hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  color: var(--text-faint);
+}
+
+.hint.error {
+  color: var(--danger);
+}
+
+.path {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12.5px;
+  color: var(--text-soft);
+  user-select: text;
+}
+
+.btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  font-weight: 550;
+  color: var(--text);
+  background: var(--raised);
+  box-shadow:
+    0 0 0 1px rgb(31 37 43 / 0.1),
+    0 1px 2px rgb(15 22 30 / 0.08);
+  transition: filter 120ms;
+}
+
+.btn:hover:not(:disabled) {
+  filter: brightness(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.dependent { margin: 0; padding: 0; border: 0; min-width: 0; }
+.inactive { opacity: 0.4; color: var(--text-faint); }
+.inactive .btn { box-shadow: none; }
+.number-input, .note-select {
+  padding: 6px 10px; border: 1px solid var(--rule); border-radius: var(--radius-control);
+  font: inherit; color: var(--text); background: var(--field); min-width: 0;
+}
+.number-input { width: 78px; user-select: text; }
+input[type="color"] { width: 40px; height: 30px; padding: 3px; border: 1px solid var(--rule); border-radius: 6px; background: var(--field); }
+
+.btn.primary {
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 1px 2px rgb(15 22 30 / 0.2);
+}
+
+:root[data-theme="dark"] .btn.primary {
+    color: #10202c;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12.5px;
+  font-weight: 550;
+  color: var(--text-soft);
+}
+
+.field input {
+  height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--radius-control);
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--field);
+  box-shadow: inset 0 0 0 1px var(--rule), inset 0 1px 2px rgb(15 22 30 / 0.05);
+  user-select: text;
+}
+
+.field input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1.5px var(--accent), 0 0 0 3px var(--accent-soft);
+}
+
+.steps {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  line-height: 1.7;
+  color: var(--text-soft);
+  font-size: 12.5px;
+}
+
+.steps code {
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 0.95em;
+  user-select: text;
+}
+
+details > summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  color: var(--accent);
+  list-style-position: inside;
+}

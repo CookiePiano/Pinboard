@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-gdrive-disconnect"
+description = "Enables the gdrive_disconnect command without any pre-configured scope."
+commands.allow = ["gdrive_disconnect"]
+
+[[permission]]
+identifier = "deny-gdrive-disconnect"
+description = "Denies the gdrive_disconnect command without any pre-configured scope."
+commands.deny = ["gdrive_disconnect"]

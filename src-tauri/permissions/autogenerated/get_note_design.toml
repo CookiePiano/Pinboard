@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-note-design"
+description = "Enables the get_note_design command without any pre-configured scope."
+commands.allow = ["get_note_design"]
+
+[[permission]]
+identifier = "deny-get-note-design"
+description = "Denies the get_note_design command without any pre-configured scope."
+commands.deny = ["get_note_design"]

@@ -1,0 +1,37 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/schemas/
+installer/build/
+.cache/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+*.log
+.vscode/*
+!.vscode/extensions.json
+
+# Raw local verification evidence (screenshots, local paths) stays out of the public repository.
+docs/verification/
+
+# Credentials, local app data and signing material must never enter a source release.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.pinboard.bak
+*.partial
+artifacts/
+release-output/
+*.wsb
+*.dmp
+**/notes/
+**/import-backups/
+**/local-state.json
+**/sync-state.json
+**/mcp/runtime.json
+**/mcp/inbox/
+**/mcp/replies/

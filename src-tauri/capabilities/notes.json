@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "notes",
+  "description": "Note editing and explicit web links",
+  "windows": ["note-*"],
+  "permissions": [
+    "allow-get-note", "allow-update-note", "allow-save-note-content", "allow-delete-note", "allow-hide-note",
+    "allow-set-pin-mode", "allow-drag-note", "allow-editor-ready",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [{ "url": "https://*" }, { "url": "http://*" }]
+    }
+  ]
+}

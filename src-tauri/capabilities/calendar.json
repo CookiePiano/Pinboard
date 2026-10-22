@@ -1,0 +1,10 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "calendar",
+  "description": "Read notes through the calendar, delete checked notes and change its pin mode",
+  "windows": ["calendar"],
+  "permissions": [
+    "allow-calendar-notes", "allow-calendar-day-notes", "allow-show-calendar-note",
+    "allow-calendar-pin", "allow-set-calendar-pin", "allow-drag-note", "allow-delete-note"
+  ]
+}

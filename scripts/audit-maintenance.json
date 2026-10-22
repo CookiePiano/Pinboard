@@ -1,0 +1,14 @@
+{
+  "reviewedOn": "2026-10-22",
+  "reviewAgainBy": "2027-01-22",
+  "reason": "Transitive maintenance notices in the locked Tauri/GTK and D-Bus dependency families. No vulnerability or yanked exception is permitted. See SECURITY.md. New notices and version changes require review.",
+  "accepted": [
+    "RUSTSEC-2024-0370:proc-macro-error@1.0.4",
+    "RUSTSEC-2026-0371:zbus_names@3.0.0",
+    "RUSTSEC-2026-0371:zbus_names@4.3.5",
+    "RUSTSEC-2026-0370:zvariant@4.2.0",
+    "RUSTSEC-2026-0370:zvariant@5.15.1",
+    "RUSTSEC-2026-0372:zvariant_derive@4.2.0",
+    "RUSTSEC-2026-0372:zvariant_derive@5.15.1"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "node": "24.13.1",
+  "rust": "1.99.1",
+  "cargoAudit": "0.22.2",
+  "nsisPlugin": {
+    "url": "https://github.com/tauri-apps/nsis-tauri-utils/releases/download/nsis_tauri_utils-v0.5.3/nsis_tauri_utils.dll",
+    "sha256": "5ba143b5db4a87d32d6e7802e033330aae56cbceabe0d1e3ba41948385ad4709"
+  },
+  "downloads": {
+    "nsis": {
+      "url": "https://github.com/tauri-apps/binary-releases/releases/download/nsis-3.13/nsis-3.13.zip",
+      "sha256": "ba63dffc4410ee89193e1cb5a41989991bd77c61068da17e3156d136b7b0b3d8"
+    },
+    "gitleaks": {
+      "url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_windows_x64.zip",
+      "sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e"
+    },
+    "syft": {
+      "url": "https://github.com/anchore/syft/releases/download/v1.55.0/syft_1.55.0_windows_amd64.zip",
+      "sha256": "ada4c9b93af575f479ce80fce6629897272a2d41f300a14bc49bace020767ca2"
+    }
+  }
+}

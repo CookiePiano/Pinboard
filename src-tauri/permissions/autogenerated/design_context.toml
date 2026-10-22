@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-design-context"
+description = "Enables the design_context command without any pre-configured scope."
+commands.allow = ["design_context"]
+
+[[permission]]
+identifier = "deny-design-context"
+description = "Denies the design_context command without any pre-configured scope."
+commands.deny = ["design_context"]
