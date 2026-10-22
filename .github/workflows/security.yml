@@ -19,6 +19,13 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
+      - name: Verify hosted malware-scanning prerequisites
+        shell: pwsh
+        run: |
+          ./scripts/prepare-ci-defender.ps1
+          $fixture = New-Item -ItemType Directory -Path "$env:RUNNER_TEMP/defender-fixture"
+          'Pinboard scanner readiness check' | Set-Content "$fixture/readiness.txt"
+          ./scripts/scan-artifacts.ps1 -Directory $fixture -EvidenceDirectory "$env:RUNNER_TEMP/defender-readiness"
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24.13.1'

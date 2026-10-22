@@ -26,6 +26,12 @@ runs frontend/Rust regressions, builds with locked dependencies, tests signature
 validation, installers and packaged MCP, produces the portable ZIP and SPDX SBOM,
 and scans the final files with updated Defender definitions without remediation.
 Any failure blocks release output. Download and scanner failures are failures.
+The disposable hosted Windows image disables Defender features and excludes its
+drives by default. `prepare-ci-defender.ps1` restores scanning only on that hosted
+runner, clears exclusions and disables automatic sample submission. Security CI
+tests scanner readiness before tagging; the release scans the final payloads and
+requires archive scanning and a non-excluded artifact directory. Developer PC
+security settings are never changed by these scripts.
 The SPDX file inventories source dependencies, including development and other-OS
 lockfile entries; it is not an assertion that all entries ship in the Windows EXE.
 
