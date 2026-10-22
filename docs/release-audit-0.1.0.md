@@ -43,6 +43,13 @@ by the release workflow; this local record does not claim a future CI result.
 
 ## Release limitations
 
+The first hosted release attempt was blocked before attestation or publication:
+the exact-installer test detected Tauri's three-byte bundle marker patch
+(`UNK` to `NSS`) in the installed EXE. Local extraction reproduced the difference.
+The full release build now uses `--no-binary-patching`, as the existing standalone
+packaging script already did, to preserve byte-identical installed and portable
+executables. The exact-hash gate remains in place; a failed attempt is not a release.
+
 The first 0.1.0 release is explicitly unsigned. Windows publisher reputation is
 not established by a checksum or GitHub attestation. SignPath application
 materials are prepared, not submitted or approved. Signed publication from

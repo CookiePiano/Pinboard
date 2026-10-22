@@ -19,7 +19,9 @@ function Run-Wizard([string]$Path,[string]$Arguments) {
     if ($p.ExitCode -ne 0) { throw "Installer returned $($p.ExitCode)" }
 }
 Run-Wizard (Join-Path $Directory "Pinboard_${version}_x64-setup.exe") "/S /NS /D=$install"
-if ((Get-FileHash -LiteralPath (Join-Path $install 'pinboard.exe')).Hash -ne (Get-FileHash -LiteralPath (Join-Path $Directory 'Pinboard.exe')).Hash) { throw 'Installed payload differs from tested portable payload' }
+$installedHash = (Get-FileHash -LiteralPath (Join-Path $install 'pinboard.exe')).Hash
+$portableHash = (Get-FileHash -LiteralPath (Join-Path $Directory 'Pinboard.exe')).Hash
+if ($installedHash -ne $portableHash) { throw "Installed payload $installedHash differs from portable payload $portableHash" }
 node (Join-Path $PSScriptRoot 'test-packaged.mjs') (Join-Path $install 'pinboard.exe') (Join-Path $work 'smoke')
 if ($LASTEXITCODE -ne 0) { throw 'Installed app smoke failed' }
 Run-Wizard (Join-Path $Directory 'Pinboard_Uninstall.exe') '/S'

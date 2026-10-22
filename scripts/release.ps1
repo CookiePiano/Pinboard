@@ -41,7 +41,9 @@ try {
     $cargoCache = if ($env:CARGO_HOME) { $env:CARGO_HOME } else { "$env:USERPROFILE\.cargo" }
     $existing = if ($saved.CARGO_ENCODED_RUSTFLAGS) { @($saved.CARGO_ENCODED_RUSTFLAGS -split [char]0x1f) } elseif ($env:RUSTFLAGS) { @($env:RUSTFLAGS -split '\s+' | Where-Object { $_ }) } else { @() }
     $env:CARGO_ENCODED_RUSTFLAGS = (@($existing) + @("--remap-path-prefix=$env:USERPROFILE=~", "--remap-path-prefix=$cargoCache=/cargo", "--remap-path-prefix=$source=/pinboard")) -join [char]0x1f
-    npm run tauri -- build --ci -- --locked -j 24
+    # Preserve identical installed/portable bytes and future publisher signatures.
+    # Pinboard does not use Tauri's per-bundle updater marker.
+    npm run tauri -- build --ci --no-binary-patching -- --locked -j 24
     if ($LASTEXITCODE -ne 0) { throw 'Tauri build failed' }
     & (Join-Path $PSScriptRoot 'build-uninstaller.ps1') -OutputDirectory $stage -UiDirectory $env:PINBOARD_UI_PLUGIN_DIR
     $installerName = "Pinboard_${version}_x64-setup.exe"
