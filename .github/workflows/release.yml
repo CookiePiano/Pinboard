@@ -69,7 +69,9 @@ jobs:
         shell: pwsh
         env:
           PINBOARD_RELEASE_TAG: ${{ inputs.tag }}
-        run: ./scripts/release.ps1 -OutputDirectory "$env:RUNNER_TEMP/publish" -TargetDirectory "$env:RUNNER_TEMP/pinboard-target" -SigningPolicy UnsignedInitial
+        run: |
+          ./scripts/prepare-ci-defender.ps1
+          ./scripts/release.ps1 -OutputDirectory "$env:RUNNER_TEMP/publish" -TargetDirectory "$env:RUNNER_TEMP/pinboard-target" -SigningPolicy UnsignedInitial
       - name: Test the exact final installer on this disposable runner
         shell: pwsh
         run: ./scripts/test-final-installer.ps1 -Directory "$env:RUNNER_TEMP/publish" -WorkDirectory "$env:RUNNER_TEMP/final-install-test"

@@ -43,3 +43,10 @@ jobs:
       - name: Audit dependencies and verify security boundaries
         shell: pwsh
         run: ./scripts/security-check.ps1
+      - name: Verify hosted malware-scanning prerequisites
+        shell: pwsh
+        run: |
+          ./scripts/prepare-ci-defender.ps1
+          $fixture = New-Item -ItemType Directory -Path "$env:RUNNER_TEMP/defender-fixture"
+          'Pinboard scanner readiness check' | Set-Content "$fixture/readiness.txt"
+          ./scripts/scan-artifacts.ps1 -Directory $fixture -EvidenceDirectory "$env:RUNNER_TEMP/defender-readiness"
