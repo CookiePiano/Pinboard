@@ -2,14 +2,19 @@
 
 ## Supported initial release
 
-The first public release is 0.1.0 for Windows 11 x64, under MIT. Local historical
-0.1.1 builds were development artifacts. Do not force an existing higher-version
-installation to downgrade. Preserve user data and historical verification records.
-The corrected distribution uses tag **v0.1.0-r2** while retaining application,
-installer and package version **0.1.0**, as requested by the maintainer. This is a
-separate release, not a replacement of immutable v0.1.0 assets. The existing
-unsigned 0.1.0 exception covers this correction; later application versions still
-require signing. Mark r2 as the latest release after verification.
+The maintainer uses the verified **v0.1.0-r2** distribution as the initial public
+release, presented as **Pinboard 0.1.0** for Windows 11 x64 under MIT. Application,
+installer and package versions remain **0.1.0**. The immutable tag identifies the
+exact tested files and their provenance. The unsigned 0.1.0 exception applies;
+later application versions still require signing.
+
+The earlier GitHub **v0.1.0** release was removed at the maintainer's request.
+Its existing Git tag and historical verification records are preserved; the
+current public download is **v0.1.0-r2**.
+
+Local historical 0.1.1 builds were development artifacts. Do not force an existing
+higher-version installation to downgrade. Preserve user data and historical
+verification records.
 
 The maintainer verifies all public files, licenses, secrets scanning and tests
 before the first source push. Protect main with required PRs, security-windows and
