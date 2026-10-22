@@ -18,7 +18,9 @@
 
 ## Navigation
 
-- Start with [README.md](README.md) for behavior, commands, source layout and data.
+- Start with [README.md](README.md) for the user-facing introduction and guides.
+  Use [the technical reference](docs/technical-reference.md) for behavior,
+  commands, source layout and data.
 - Note storage and hashes: `src-tauri/src/model.rs`, `store.rs`, `sync/`.
 - Editing and rendering: `src/lib/note/editor.ts`, `formatting.ts`, `links.ts`.
 - Shared contracts: `src/lib/ipc.ts` and registered commands in `src-tauri/src/`.
@@ -41,8 +43,11 @@
 - MCP provisioning is explicit and PC-local. Opening settings, startup and ZIP
   import must not silently provision it or edit external AI client configuration.
 - Keep legacy compatibility paths unless the requested change includes migration.
-- Write maintained documentation in English. Preserve literal paths, identifiers,
-  localized acceptance strings and historical verification dates/counts.
+- Keep the README and user guide in Korean by default, with matching English
+  editions and language links. Write developer documentation in English. Preserve
+  literal paths, identifiers, localized acceptance strings and historical
+  verification dates/counts. Public screenshots must use isolated synthetic data;
+  never include personal notes, account details or private filesystem paths.
 
 ## Validation
 
