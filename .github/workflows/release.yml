@@ -49,7 +49,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw 'Cannot verify required checks' }
           $passed = ($checks | ConvertFrom-Json).check_runs | Where-Object { $_.name -eq 'security-windows' -and $_.conclusion -eq 'success' -and $_.app.slug -eq 'github-actions' }
           if (!$passed) { throw 'The release commit has not passed security-windows' }
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.13.1'
       - name: Install locked build dependencies
