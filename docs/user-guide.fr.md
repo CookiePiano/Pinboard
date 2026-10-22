@@ -2,6 +2,8 @@
 
 [한국어](user-guide.md) | [English](user-guide.en.md) | [简体中文](user-guide.zh.md) | [日本語](user-guide.ja.md) | **Français** | [Español](user-guide.es.md)
 
+[Retour à la présentation](../README.fr.md)
+
 Commencez par écrire une note. Vous pourrez choisir les couleurs et les réglages plus tard.
 Ce guide concerne la version 0.1.0 pour Windows 11. Toutes les notes des captures sont des exemples fictifs.
 Cliquez sur une image pour l’afficher en taille réelle si le texte est trop petit.
@@ -150,4 +152,4 @@ Ces fonctions ne sont pas nécessaires pour les notes du quotidien. Les notes et
 Avant de joindre une capture, vérifiez qu’elle ne montre ni notes privées, ni noms, adresses e-mail, informations de compte ou chemins de dossiers.
 Pour un problème de sécurité, suivez les instructions de signalement privé de la [politique de sécurité, en anglais](../SECURITY.md).
 
-[Présentation en coréen](../README.md) · [Introduction in English](../README.en.md)
+[Retour à la présentation](../README.fr.md)

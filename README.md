@@ -1,6 +1,6 @@
 # Pinboard
 
-**한국어** | [English](README.en.md)
+**한국어** | [English](README.en.md) | [简体中文](README.zh.md) | [日本語](README.ja.md) | [Français](README.fr.md) | [Español](README.es.md)
 
 **바탕화면에 붙여 두고, 생각날 때 바로 적는 스티커 메모 앱.**
 

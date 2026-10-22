@@ -17,7 +17,7 @@
 3. Locate the feature owner below before editing. Run the matching tests and the required repository checks.
 4. Use a dated receipt only as evidence for its named snapshot. Verify current source and binary hashes independently.
 
-The README has Korean and English editions, with Korean as the default. User guides also cover Simplified Chinese, Japanese, French and Spanish, matching the application's six languages. Developer documentation is maintained in English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
+The README and user guides cover Korean, English, Simplified Chinese, Japanese, French and Spanish, with Korean as the default. The language links at the top of each README lead to the corresponding introduction; each guide links back to its own language's README. Developer documentation is maintained in English. Korean UI acceptance strings, literal filesystem paths, and user-content examples remain unchanged where they are part of a contract or historical evidence. Developer home directories in recorded paths are written as `<user>` placeholders. Application translations are product data and must not be converted to English-only catalogs.
 
 ## Current guides
 

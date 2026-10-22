@@ -2,6 +2,8 @@
 
 [한국어](user-guide.md) | [English](user-guide.en.md) | [简体中文](user-guide.zh.md) | [日本語](user-guide.ja.md) | [Français](user-guide.fr.md) | **Español**
 
+[Volver a la presentación](../README.es.md)
+
 Empieza escribiendo una nota. Puedes elegir colores y cambiar la configuración cuando lo necesites.
 Esta guía corresponde a la versión 0.1.0 para Windows 11. Todas las notas de las imágenes son ejemplos ficticios.
 Si el texto de una captura se ve pequeño, haz clic en la imagen para verla a tamaño completo.
@@ -150,4 +152,4 @@ No necesitas estas funciones para las notas del día a día. Las notas y las cop
 Antes de adjuntar una captura, comprueba que no muestre notas privadas, nombres, correos electrónicos, datos de cuentas ni rutas de carpetas.
 Para problemas de seguridad, sigue las instrucciones de comunicación privada de la [política de seguridad, en inglés](../SECURITY.md).
 
-[Presentación en coreano](../README.md) · [Introduction in English](../README.en.md)
+[Volver a la presentación](../README.es.md)

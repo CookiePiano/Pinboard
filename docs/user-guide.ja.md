@@ -2,6 +2,8 @@
 
 [한국어](user-guide.md) | [English](user-guide.en.md) | [简体中文](user-guide.zh.md) | **日本語** | [Français](user-guide.fr.md) | [Español](user-guide.es.md)
 
+[紹介へ戻る](../README.ja.md)
+
 まずはメモを書いてみましょう。色や設定は、必要になったときに変えられます。
 このガイドは Windows 11 向けの v0.1.0 を対象としています。画像のメモはすべて架空の例です。
 画像の文字が小さいときは、クリックして原寸で表示できます。
@@ -150,4 +152,4 @@ Windows のセキュリティ保護は有効にしておきます。詳しい確
 画像を添付する前に、個人的なメモ、氏名、メールアドレス、アカウント情報、フォルダーのパスが写っていないか確認してください。
 セキュリティの問題は [セキュリティポリシー（英語）](../SECURITY.md) の案内に従って非公開で報告してください。
 
-[紹介へ戻る（韓国語）](../README.md) · [Introduction in English](../README.en.md)
+[紹介へ戻る](../README.ja.md)
