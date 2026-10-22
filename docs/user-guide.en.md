@@ -4,6 +4,7 @@
 
 Start by writing a note. You can explore colors and settings whenever you need them.
 This guide covers v0.1.0 for Windows 11. All screenshots use made-up example notes.
+If text in a screenshot looks small, click the image to view it at full size.
 
 [Install](#install) · [Write notes](#notes) · [Customize](#appearance) · [Pin](#pin) · [Hide or delete](#hide-delete) · [Calendar](#calendar) · [Settings](#settings) · [Back up](#backup)
 
